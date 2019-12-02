@@ -19,7 +19,7 @@ class UserController extends Controller
         $status = 401;
         $response = ['error' => 'Unauthorised'];
 
-        if(Auth::attempt($request->only(['email', 'password']))) {
+        if (Auth::attempt($request->only(['email', 'password']))) {
             $status = 200;
             $response = [
                 'user' => Auth::user(),
@@ -39,7 +39,7 @@ class UserController extends Controller
             'c_password' => 'required|same:password',
         ]);
 
-        if($validator->fails()) {
+        if ($validator->fails()) {
             return response()->json(['error' => $validator->errors(), 401]);
         }
 

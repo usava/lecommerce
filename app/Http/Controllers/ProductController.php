@@ -30,7 +30,7 @@ class ProductController extends Controller
         $product = Product::create($request->only(['name', 'description', 'units', 'price', 'image']));
 
         return response()->json([
-            'status' => (bool) $product,
+            'status' => (bool)$product,
             'data' => $product,
             'message' => $product ? 'Product Created!' : 'Error Creating Product'
         ]);
@@ -49,8 +49,8 @@ class ProductController extends Controller
 
     public function uploadFile(Request $request)
     {
-        if($request->hasFile('image')){
-            $name = time(). "_".$request->file('image')->getClientOriginalName();
+        if ($request->hasFile('image')) {
+            $name = time() . "_" . $request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('images'), $name);
         }
 
