@@ -9,6 +9,12 @@ class Order extends Model
 {
     use SoftDeletes;
 
+    const STATUS_NEW = 0;
+    const STATUS_ACCEPTED = 1;
+    const STATUS_SEND = 2;
+    const STATUS_DELIVERED = 3;
+    const STATUS_DONE = 4;
+
     protected $fillable = [
         'product_id', 'user_id', 'quantity', 'address'
     ];
