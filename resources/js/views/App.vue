@@ -41,7 +41,7 @@
             }
         },
         mounted () {
-            this.SetDefaults()
+            this.setDefaults()
         },
         methods: {
             setDefaults () {
