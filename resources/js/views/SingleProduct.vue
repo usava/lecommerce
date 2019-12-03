@@ -6,7 +6,7 @@
                 <h3 class="title" v-html="product.name"></h3>
                 <p class="text-muted">{{product.description}}</p>
                 <h4>
-                    <span class="small-text text-muted fload-left">$ {{ product.title }}</span>
+                    <span class="small-text text-muted fload-left">$ {{ product.price }}</span>
                     <span class="small-text fload-right">Available Quantity {{ product.units }}</span>
                 </h4>
                 <hr>
