@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +23,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/users/{user}', 'UserController@show');
     Route::patch('/users/{user}', 'UserController@update');
     Route::get('/users/{user}/orders', 'UserController@showOrders');
-    Route::patch('products/{product}/units/add', 'ProductController@updateUnits');
+    Route::patch('/products/{product}/units/add', 'ProductController@updateUnits');
     Route::patch('orders/{order}/deliver', 'OrderController@deliverOrder');
     Route::resource('/orders', 'OrderController');
-    Route::resource('/products', 'ProductController');
+    Route::resource('/products', 'ProductController')->except(['index', 'show']);
 });

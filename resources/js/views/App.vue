@@ -46,7 +46,7 @@
         methods: {
             setDefaults () {
                 if (this.isLoggedIn) {
-                    let user = JSON.parse(localStorage.getItem('lecommece.user'))
+                    let user = JSON.parse(localStorage.getItem('lecommerce.user'))
                     this.name = user.name
                     this.user_type = user.is_admin
                 }

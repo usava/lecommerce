@@ -27,7 +27,7 @@ class UserController extends Controller
             ];
         }
 
-        return $response()->json($response, $status);
+        return response()->json($response, $status);
     }
 
     public function register(Request $request)
