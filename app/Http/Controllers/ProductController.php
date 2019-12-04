@@ -31,7 +31,7 @@ class ProductController extends Controller
 
         return response()->json([
             'status' => (bool)$product,
-            'data' => $product,
+            'products' => Product::all(),
             'message' => $product ? 'Product Created!' : 'Error Creating Product'
         ]);
     }
@@ -72,6 +72,7 @@ class ProductController extends Controller
 
         return response()->json([
             'status' => $status,
+            'products' => Product::all(),
             'message' => $status ? 'Product Updated!' : 'Error Updating Product'
         ]);
     }

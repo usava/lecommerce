@@ -39,7 +39,9 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $order = Order::create($request->only(['product_id', 'user_id', 'quantity', 'address']));
+        $_order = $request->only(['product_id', 'quantity', 'address']);
+        $_order['user_id'] = auth()->id();
+        $order = Order::create($_order);
 
         return response()->json([
             'status' => (bool)$order,
