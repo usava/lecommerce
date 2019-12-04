@@ -2,8 +2,8 @@
     <div>
         <div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
             <h2>
-                <span class="title"><strong>Thank You</strong></span>
-                <span class="medium-text">Your order has been placed.</span>
+                <div class="title"><strong>Thank You</strong></div>
+                <div class="medium-text">Your order has been placed.</div>
                 <router-link :to="{name: 'userboard'}" class="small-link">
                     See your orders
                 </router-link>

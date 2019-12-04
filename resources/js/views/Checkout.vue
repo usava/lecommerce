@@ -58,7 +58,7 @@
             axios.get(url).then(response => this.product = response.data)
 
             if (localStorage.getItem('lecommerce.jwt') != null) {
-                this.user = JSON.parse(localStorage.getItem('lecommerce.usre'))
+                this.user = JSON.parse(localStorage.getItem('lecommerce.user'))
                 axios.defaults.headers.common['Content-Type'] = 'application/json'
                 axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('lecommerce.jwt')
             }
@@ -74,7 +74,7 @@
                 e.preventDefault()
 
                 let address = this.address
-                let product_id = this.product_id
+                let product_id = this.product.id
                 let quantity = this.quantity
 
                 axios.post('api/orders/', { address, quantity, product_id })
